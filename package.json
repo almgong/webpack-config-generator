@@ -1,0 +1,42 @@
+{
+  "name": "webpack-config-generator",
+  "description": "Generates functional webpack configuration files to speed up the setup process in projects using webpack.",
+  "version": "0.0.0",
+  "author": "Allen Gong @almgong",
+  "bin": {
+    "wpcg": "./bin/run"
+  },
+  "bugs": "https://github.com/almgong/webpack-config-generator/issues",
+  "dependencies": {
+    "shelljs": "^0.8.1"
+  },
+  "devDependencies": {
+    "@oclif/test": "^1.0.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-oclif": "^1.4.0",
+    "mocha": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "homepage": "https://github.com/almgong/webpack-config-generator",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "bin": "wpcg"
+  },
+  "repository": "almgong/webpack-config-generator",
+  "scripts": {
+    "lint": "eslint .",
+    "posttest": "npm run lint",
+    "test": "mocha --forbid-only \"test/**/*.test.js\""
+  }
+}
