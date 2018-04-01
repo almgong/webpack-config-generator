@@ -1,8 +1,6 @@
 /**
  * Template for a simple babel/es6 webpack setup.
  */
-
-/* BEGIN TEMPLATE */
 const path = require('path');
 
 module.exports = {

@@ -4,9 +4,9 @@ const Renderer = require('./lib/renderer');
 
 class WebpackConfigGeneratorCommand extends Command {
   async run() {
-    const {flags} = this.parse(WebpackConfigGeneratorCommand)
-    const name = flags.name || 'world'
-    
+    const { flags } = this.parse(WebpackConfigGeneratorCommand)
+    process.env.DEBUG = flags.debug || 'false';
+
     Renderer.render();
   }
 }
@@ -18,11 +18,14 @@ Extra documentation goes here
 `
 
 WebpackConfigGeneratorCommand.flags = {
-  // add --version flag to show CLI version
+  // add --version/-v flag to show CLI version
   version: flags.version({char: 'v'}),
-  // add --help flag to show CLI version
-  help: flags.help({char: 'h'}),
-  // test: flags.string({char: 't', description: 'test'}),
-}
 
-module.exports = WebpackConfigGeneratorCommand
+  // add --help/-h flag to show CLI version
+  help: flags.help({char: 'h'}),
+
+  // add --debug/-d flag to print debug messages
+  debug: flags.boolean({char: 'd', description: 'Prints debug messages'}),
+};
+
+module.exports = WebpackConfigGeneratorCommand;

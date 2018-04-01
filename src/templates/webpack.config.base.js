@@ -4,10 +4,6 @@
  * blank. This is mainly for reference or exporting for self customization.
  * 
  * Tentative rules of templates in wpcg:
- * 
- * Everything above `\/* BEGIN TEMPLATE *\/` will be ignored and removed in the
- * final generated output configuration file. This is an optional space for you
- * to specify anything important for the template file.
  *
  * Variables that will be substituted are wrapped in: ${}.
  * For instance, if your template contains:

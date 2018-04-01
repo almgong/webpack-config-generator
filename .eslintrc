@@ -1,3 +1,10 @@
 {
-  "extends": "oclif"
+  "extends": "oclif",
+  "rules": {
+    "semi": "off",
+    "spaced-comment": "off",
+    "object-curly-spacing": "off",
+    "comma-dangle": "off",
+    "unicorn/filename-case": "off"
+  }
 }
