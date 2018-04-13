@@ -22,20 +22,20 @@ class Renderer {
 
     // replace variables as necessary in template
     d.log('Replacing variables...');
-    this._renderVariables(path.join(renderedOutputPath, renderedOutputFilename), registry[template].defaults);
+    this.renderVariables(path.join(renderedOutputPath, renderedOutputFilename), registry[template].defaults);
 
     // complete
     Cmd.echo('... And done!');
   }
 
-  static _renderVariables(filePath, variableMapping) {
+  static renderVariables(filePath, variableMapping) {
     Object.keys(variableMapping).forEach(k => {
-      d.log(`replacing: ${this._wrapInTemplatingSyntax(k)} with ${variableMapping[k]} in ${filePath}`);
-      Cmd.sedModifyInPlace(this._wrapInTemplatingSyntax(k), variableMapping[k], filePath);
+      d.log(`replacing: ${this.wrapInTemplatingSyntax(k)} with ${variableMapping[k]} in ${filePath}`);
+      Cmd.sedModifyInPlace(this.wrapInTemplatingSyntax(k), variableMapping[k], filePath);
     });
   }
 
-  static _wrapInTemplatingSyntax(value) {
+  static wrapInTemplatingSyntax(value) {
     return `\\$\\{${value}\\}`;
   }
 }

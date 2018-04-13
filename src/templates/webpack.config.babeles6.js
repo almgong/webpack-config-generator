@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    ${entryName}: ${entryPath};
+    ${entryName}: ${entryPath}
   },
   output: {
     path: ${outputPath},
@@ -18,7 +18,10 @@ module.exports = {
         test: ${jsExtensionRegex},
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: ${babelLoaderPresets}
+          }
         }
       }
     ]
